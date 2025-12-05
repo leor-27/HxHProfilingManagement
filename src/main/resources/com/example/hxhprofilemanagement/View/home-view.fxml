@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1123.0" prefWidth="1481.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hxhprofilemanagement.Controller.HomeController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1127.0" prefWidth="1472.0">
+         <children>
+            <ImageView fitHeight="1145.0" fitWidth="1564.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/background.png" />
+               </image>
+            </ImageView>
+            <AnchorPane fx:id="formPane" prefHeight="1139.0" prefWidth="445.0" visible="false">
+               <children>
+                  <Text layoutX="47.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Given Name" wrappingWidth="93.043701171875">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="uploadButton" layoutX="40.0" layoutY="321.0" mnemonicParsing="false" onAction="#uploadImage" text="Upload Image" />
+                  <TextField fx:id="givenNameField" layoutX="47.0" layoutY="421.0" prefHeight="29.0" prefWidth="347.0" />
+                  <Text layoutX="48.0" layoutY="488.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Middle Name" wrappingWidth="93.043701171875">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="middleNameField" layoutX="47.0" layoutY="500.0" prefHeight="29.0" prefWidth="347.0" />
+                  <Text layoutX="48.0" layoutY="573.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" wrappingWidth="93.043701171875">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="lastNameField" layoutX="48.0" layoutY="584.0" prefHeight="29.0" prefWidth="347.0" />
+                  <RadioButton fx:id="maleRadio" layoutX="65.0" layoutY="676.0" mnemonicParsing="false" text="Male">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="genderGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <Text layoutX="47.0" layoutY="658.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" wrappingWidth="93.043701171875">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <RadioButton fx:id="femaleRadio" layoutX="165.0" layoutY="677.0" mnemonicParsing="false" text="Female" toggleGroup="$genderGroup" />
+                  <DatePicker fx:id="birthdatePicker" layoutX="47.0" layoutY="756.0" prefHeight="26.0" prefWidth="149.0" />
+                  <Text layoutX="48.0" layoutY="743.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birthdate" wrappingWidth="93.043701171875">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <ChoiceBox fx:id="nenTypeChoice" layoutX="48.0" layoutY="834.0" prefWidth="150.0" />
+                  <Text layoutX="49.0" layoutY="824.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NEN Type" wrappingWidth="93.043701171875">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="51.0" layoutY="904.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Affiliation" wrappingWidth="93.043701171875">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="saveButton" layoutX="144.0" layoutY="991.0" mnemonicParsing="false" onAction="#saveProfile" prefHeight="30.0" prefWidth="167.0" text="Save / Edit Profile">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="affiliationField" layoutX="50.0" layoutY="915.0" prefHeight="29.0" prefWidth="345.0" />
+                  <ImageView fx:id="profileImageView" fitHeight="257.0" fitWidth="354.0" layoutX="41.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <Text layoutX="455.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HxH Profile Management">
+               <font>
+                  <Font name="Rockwell" size="40.0" />
+               </font>
+            </Text>
+            <Button fx:id="addUserButton" layoutX="1287.0" layoutY="99.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="125.0" text="Add User">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <TableView fx:id="userTable" layoutX="453.0" layoutY="217.0" prefHeight="711.0" prefWidth="965.0">
+              <columns>
+                <TableColumn fx:id="colId" prefWidth="55.0" text="ID" />
+                <TableColumn fx:id="colImage" prefWidth="105.0" text="Image" />
+                <TableColumn fx:id="colName" prefWidth="355.0" text="Name" />
+                <TableColumn fx:id="colGender" prefWidth="95.0" text="Gender" />
+                <TableColumn fx:id="colAge" prefWidth="83.0" text="Age" />
+                <TableColumn fx:id="colNenType" prefWidth="125.0" text="NEN Type" />
+                <TableColumn fx:id="colAffiliation" prefWidth="145.0" text="Affiliation" />
+              </columns>
+            </TableView>
+            <Text layoutX="424.0" layoutY="1077.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Created by: Leo Angelo Larre Agpoon | 3044 BCS213L-OCa Object-Oriented Programming" wrappingWidth="645.6981201171875">
+               <font>
+                  <Font name="Rockwell" size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="458.0" layoutY="957.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTE: Image, Given Name, Gender, and NEN Type inputs are required." wrappingWidth="811.017822265625">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>
